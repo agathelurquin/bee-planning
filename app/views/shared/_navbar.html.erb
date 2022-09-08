@@ -1,49 +1,53 @@
 <%# if user not signed in ==> LOGO ..................... SIGN IN %>
 <%# if user signed in ==> MENU ..................... PROFILE %>
-
-
 <div class="navbar">
-  <div class="container-fluid">
-    <%# link to home user page, add a logo %>
-    <%= link_to "#", class: "logo" do %>
-      <%= image_tag "https://images.vexels.com/media/users/3/234700/isolated/preview/75b118051c49030ad7876d7504c89be7-swirly-bee-flat.png" %>
-    <% end %>
-    <%# burger icon %>
 
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <% if user_signed_in? %>
-          <li class="nav-item active">
-            <%= link_to "Home", "#", class: "nav-link" %>
-          </li>
-          <li class="nav-item">
-            <%= link_to "Studies", "#", class: "nav-link" %>
-          </li>
-           <li class="nav-item">
-            <%= link_to "Calendar", "#", class: "nav-link" %>
-          </li>
-           <li class="nav-item">
-            <%= link_to "Lifestyle", "#", class: "nav-link" %>
-          </li>
-          <li class="nav-item">
-            <%= link_to "Social", "#", class: "nav-link" %>
-          </li>
-           <li class="nav-item">
-            <%= link_to "Food", "#", class: "nav-link" %>
-          </li>
-          <%# profile avatar with dropdown to see profile details or logout %>
-          <li class="profile nav-item dropdown">
-            <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier" %>
-            <div class="item-dropdown">
-              <%= link_to "See Profile details", "#", class: "dropdown-item" %>
-              <%= link_to "Log out", destroy_user_session_path, method: :delete %>
-            </div>
-          </li>
-        <% else %>
-          <li class="nav-item">
-            <%= link_to "Login", new_user_session_path, class: "nav-link" %>
-          </li>
-        <% end %>
-      </ul>
-    </div>
+  <%# link to home user page, add a logo %>
+  <div class="logo">
+    <%= link_to "#" do %>
+      <img src="https://images.vexels.com/media/users/3/234700/isolated/preview/75b118051c49030ad7876d7504c89be7-swirly-bee-flat.png" alt="bee planning logo" class = "logo-image">
+    <% end %>
   </div>
+
+  <%# burger icon %>
+  <div class="menu">
+    <ul class="menu-items">
+      <%# app menu %>
+      <% if user_signed_in? %>
+        <li class="nav-item active">
+          <%= link_to "Home", "#", class: "nav-link" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "Studies", "#", class: "nav-link" %>
+        </li>
+          <li class="nav-item">
+          <%= link_to "Calendar", "#", class: "nav-link" %>
+        </li>
+          <li class="nav-item">
+          <%= link_to "Lifestyle", "#", class: "nav-link" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "Social", "#", class: "nav-link" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "Food", "#", class: "nav-link" %>
+        </li>
+
+        <%# profile avatar with dropdown to see profile details or logout %>
+        <li class="profile nav-item dropdown">
+          <img src="https://kitt.lewagon.com/placeholder/users/ssaunier" alt="user-avatar" class="avatar">
+          <div class="item-dropdown">
+            <%= link_to "See Profile details", "#", class: "dropdown-item" %>
+            <%= link_to "Log out", destroy_user_session_path, method: :delete %>
+          </div>
+        </li>
+      <%# landing page menu %>
+      <% else %>
+        <li class="nav-item">
+          <%= link_to "Login", new_user_session_path, class: "nav-link" %>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+  <%# end burger icon %>
 </div>
