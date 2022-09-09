@@ -13,6 +13,10 @@
   margin: 1rem;
 }
 
+.mobile-nav-toggle {
+  display: none;
+}
+
 .menu-items {
   display: flex;
   justify-content: space-between;
@@ -24,6 +28,9 @@
   align-items: flex-start;
 }
 
+.nav-item a {
+  color:rgb(246, 245, 242);
+}
 .avatar {
   border-radius: 50%;
   margin: 1rem;
@@ -36,7 +43,7 @@
   .menu-items {
     position: fixed;
     inset: 0 0 0 34%;
-    background: rgb(235, 127, 127);
+    background: rgb(210, 50, 124);
     flex-direction: column;
     padding: 4rem 0.5rem 4rem 3rem;
 
@@ -51,13 +58,19 @@
   // menu icon
 
   .mobile-nav-toggle {
+    display: block;
     position: absolute;
-    background: red;
+    background: transparent;
+    color: rgb(246, 245, 242);
+    font-size: 2rem;
+    font-weight: light;
+    border: none;
     width: 1rem;
     aspect-ratio: 1/1;
-    top: 2rem;
-    right: 2rem;
+    top: 1rem;
+    right: 1rem;
     z-index: 9999;
+    margin: 1rem;
   }
 
 }
