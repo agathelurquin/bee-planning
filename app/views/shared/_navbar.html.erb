@@ -10,8 +10,10 @@
   </div>
 
   <%# burger icon %>
+  <button class="mobile-nav-toggle" aria-controls="menu-items" aria-expanded="false">
+    <span class="sr-only">Menu</span></button>
   <div class="menu">
-    <ul class="menu-items">
+    <ul id="menu-items" class="menu-items">
       <%# app menu %>
       <% if user_signed_in? %>
         <li class="nav-item active">
