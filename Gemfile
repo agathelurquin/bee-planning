@@ -34,6 +34,8 @@ gem 'bootsnap', '>= 1.4.4', require: false
 gem "simple_form", github: "heartcombo/simple_form"
 # Use scss
 gem "sassc-rails"
+# Icons
+gem "font-awesome-sass", "~> 6.1"
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
