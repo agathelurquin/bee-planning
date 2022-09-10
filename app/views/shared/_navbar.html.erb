@@ -1,6 +1,6 @@
 <%# if user not signed in ==> LOGO ..................... SIGN IN %>
 <%# if user signed in ==> MENU ..................... PROFILE %>
-<div class="navbar" data-controller="navbar">
+<div class="navbar" >
 
   <%# link to home user page, add a logo %>
   <div class="logo">
@@ -10,7 +10,7 @@
   </div>
 
   <%# burger icon %>
-  <button class="mobile-nav-toggle" aria-controls="menu-items" aria-expanded="false" data-navbar-target="menu-icon"><i class="fas fa-bars">
+  <button class="mobile-nav-toggle" aria-controls="menu-items" aria-expanded="false" data-controller="navbar"><i class="fas fa-bars">
     <span class="sr-only">Menu</span></i></button>
   <div class="menu">
     <ul id="menu-items" class="menu-items">
