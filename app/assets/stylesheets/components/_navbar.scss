@@ -46,7 +46,7 @@
     background: rgb(210, 50, 124);
     flex-direction: column;
     padding: 4rem 0.5rem 4rem 3rem;
-
+    transform: translateX(100%);
   }
 
   @supports (backdrop-filter: blur(1rem)){
