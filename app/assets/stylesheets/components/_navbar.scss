@@ -40,6 +40,8 @@
 
 
 @media only screen and (max-width: 768px) {
+  // Primary navigation propreties
+
   .menu-items {
     position: fixed;
     inset: 0 0 0 34%;
@@ -47,6 +49,7 @@
     flex-direction: column;
     padding: 4rem 0.5rem 4rem 3rem;
     transform: translateX(100%);
+    transition: transform 350ms ease-out;
   }
 
   @supports (backdrop-filter: blur(1rem)){
@@ -55,9 +58,15 @@
       backdrop-filter: blur(1rem);
     }
   }
+
+  .visible {
+    transform: translateX(0%);
+  }
+
+
   // menu icon
 
-  .mobile-nav-toggle {
+  .mobile-nav-toggle-icon {
     display: block;
     position: absolute;
     background: transparent;
