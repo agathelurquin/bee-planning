@@ -40,9 +40,11 @@
           </li>
 
           <%# profile avatar with dropdown to see profile details or logout %>
-          <li class="profile nav-item dropdown">
-            <img src="https://kitt.lewagon.com/placeholder/users/ssaunier" alt="user-avatar" class="avatar">
-            <div class="item-dropdown">
+          <li class="profile nav-item dropdown" >
+            <button data-action="click->navbar#profileToggle" class="avatar-block">
+              <img src="https://kitt.lewagon.com/placeholder/users/ssaunier" alt="user-avatar" class="avatar">
+            </button>
+            <div class="item-dropdown hidden-toggle" data-navbar-target="profile">
               <%= link_to "See Profile details", "#", class: "dropdown-item" %>
               <%= link_to "Log out", destroy_user_session_path, method: :delete %>
             </div>

@@ -1,3 +1,4 @@
+// Entire navbar
 .navbar {
   display: flex;
   width: 100vw;
@@ -7,21 +8,28 @@
   align-items: center;
 }
 
+// Logo
+
 .logo-image {
   width: 3rem;
   height: 3rem;
   margin: 1rem;
 }
 
-.mobile-nav-toggle {
+
+// Toggled Menu desktop
+
+.mobile-nav-toggle-icon {
   display: none;
 }
 
+// All link section
 .menu-items {
   display: flex;
   justify-content: space-between;
 }
 
+// individual links
 .nav-item{
   margin-inline: 1rem;
   justify-content: center;
@@ -31,6 +39,14 @@
 .nav-item a {
   color:rgb(246, 245, 242);
 }
+
+// Profile toggle
+.avatar-block {
+  display: block;
+  background: transparent;
+  border: none;
+}
+
 .avatar {
   border-radius: 50%;
   margin: 1rem;
@@ -38,8 +54,20 @@
   height: 2.5rem;
 }
 
+.item-dropdown {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.hidden-toggle {
+  display: none;
+  transition: display 350ms ease-out;
+}
+
 
 @media only screen and (max-width: 768px) {
+
   // Primary navigation propreties
 
   .menu-items {
@@ -72,7 +100,6 @@
     background: transparent;
     color: rgb(246, 245, 242);
     font-size: 2rem;
-    font-weight: light;
     border: none;
     width: 1rem;
     aspect-ratio: 1/1;
