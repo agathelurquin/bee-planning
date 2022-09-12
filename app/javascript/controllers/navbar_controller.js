@@ -32,10 +32,10 @@ export default class extends Controller {
   }
 
   profileToggle() {
-    if(this.profileTarget.classList.contains("hidden-toggle")){
-      this.profileTarget.classList.remove("hidden-toggle")
+    if(this.dropdownTarget.classList.contains("dropdown-active")){
+      this.dropdownTarget.classList.remove("dropdown-active")
     } else {
-      this.profileTarget.classList.add("hidden-toggle")
+      this.dropdownTarget.classList.add("dropdown-active")
     }
-  }
+   }
 }

@@ -8,6 +8,10 @@
   align-items: center;
 }
 
+.navbar-toggle a:hover {
+ color: rgb(0, 0, 0);
+}
+
 // Logo
 
 .logo-image {
@@ -41,6 +45,10 @@
 }
 
 // Profile toggle
+.dropdown {
+  position: relative;
+}
+
 .avatar-block {
   display: block;
   background: transparent;
@@ -54,17 +62,26 @@
   height: 2.5rem;
 }
 
-.item-dropdown {
+.dropdown-items {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  position: absolute;
+  background-color: rgb(182, 72, 90);
+  top: calc(100% + .25rem);
+  padding: .5rem;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .1);
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(-10 px);
+  transition: opacity 150ms ease-in-out, transform 150ms ease-in-out;
 }
 
-.hidden-toggle {
-  display: none;
-  transition: display 350ms ease-out;
+.dropdown >.dropdown-item:focus + .dropdown-items {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
 }
-
 
 @media only screen and (max-width: 768px) {
 
