@@ -1,27 +1,46 @@
+// Entire navbar
 .navbar {
   display: flex;
   width: 100vw;
   background-color: pink;
   border-bottom: 1px solid rgba(154, 154, 152, 0.6);
   justify-content: space-between;
-  align-items: center;
+  position: sticky;
+  max-height: 70px;
+
 }
+
+.navbar-toggle a:hover {
+ color: rgb(0, 0, 0);
+}
+
+// Logo
 
 .logo-image {
-  width: 3rem;
-  height: 3rem;
-  margin: 1rem;
+  width: 2.5rem;
+  height: 2.5rem;
+  margin: 0.5rem;
 }
 
-.mobile-nav-toggle {
+
+// Toggled Menu desktop
+
+.toggled-menu {
+  height: inherit;
+}
+
+.mobile-nav-toggle-icon {
   display: none;
 }
 
+// All link section
 .menu-items {
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 
+// individual links
 .nav-item{
   margin-inline: 1rem;
   justify-content: center;
@@ -31,6 +50,18 @@
 .nav-item a {
   color:rgb(246, 245, 242);
 }
+
+// Profile toggle
+// .dropdown {
+//   position: relative;
+// }
+
+.avatar-block {
+  display: block;
+  background: transparent;
+  border: none;
+}
+
 .avatar {
   border-radius: 50%;
   margin: 1rem;
@@ -38,8 +69,54 @@
   height: 2.5rem;
 }
 
+.dropdown-items {
+  display: none;
+  width: 100%;
+  flex-direction: column;
+  overflow: hidden;
+  max-height: 0;
+  padding: .5rem;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .1);
+}
+
+.dropdown-items > li > a {
+  // height: 50px;
+  padding-left: 50%;
+  width: 100%;
+  align-items: center;
+  display: flex;
+
+}
+
+@keyframes dropdownAnimation {
+  0% {
+    box-shadow: 0px 3px 3px 1px rgba(0, 0, 0, 0);
+    display: flex;
+    // border-top: 3px solid rgb(172, 98, 164);
+  }
+
+  30% {
+    box-shadow: 0px 3px 3px 1px rgba(0, 0, 0, 0.3);
+    display: flex;
+    // border-top: 3px solid rgb(172, 98, 164);
+  }
+  100% {
+    max-height: 60em;
+    border-top: 3px solid rgb(172, 98, 164);
+    display: flex;
+    // box-shadow: 0px 3px 3px 1px rgba(0, 0, 0, 0.3);
+  }
+
+}
+
+.dropdown:hover > .dropdown-items {
+  animation: dropdownAnimation 1s forwards;
+}
+
+// Media queries
 
 @media only screen and (max-width: 768px) {
+
   // Primary navigation propreties
 
   .menu-items {
@@ -50,6 +127,7 @@
     padding: 4rem 0.5rem 4rem 3rem;
     transform: translateX(100%);
     transition: transform 350ms ease-out;
+    overflow: scroll;
   }
 
   @supports (backdrop-filter: blur(1rem)){
@@ -63,6 +141,9 @@
     transform: translateX(0%);
   }
 
+  .nav-item {
+    padding: 2rem 0;
+  }
 
   // menu icon
 
@@ -71,12 +152,11 @@
     position: absolute;
     background: transparent;
     color: rgb(246, 245, 242);
-    font-size: 2rem;
-    font-weight: light;
+    font-size: 1.5rem;
     border: none;
     width: 1rem;
     aspect-ratio: 1/1;
-    top: 1rem;
+    // top: 1rem;
     right: 1rem;
     z-index: 9999;
     margin: 1rem;

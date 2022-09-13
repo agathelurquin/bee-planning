@@ -17,7 +17,7 @@
       </i>
     </button>
     <div class="toggled-menu" >
-      <ul id="menu-items" class="menu-items" data-navbar-target="menu">
+      <ul class="menu-items" data-navbar-target="menu">
         <%# app menu %>
         <% if user_signed_in? %>
           <li class="nav-item active">
@@ -26,10 +26,10 @@
           <li class="nav-item">
             <%= link_to "Studies", "#", class: "nav-link" %>
           </li>
-            <li class="nav-item">
+          <li class="nav-item">
             <%= link_to "Calendar", "#", class: "nav-link" %>
           </li>
-            <li class="nav-item">
+          <li class="nav-item">
             <%= link_to "Lifestyle", "#", class: "nav-link" %>
           </li>
           <li class="nav-item">
@@ -41,10 +41,17 @@
 
           <%# profile avatar with dropdown to see profile details or logout %>
           <li class="profile nav-item dropdown">
-            <img src="https://kitt.lewagon.com/placeholder/users/ssaunier" alt="user-avatar" class="avatar">
-            <div class="item-dropdown">
-              <%= link_to "See Profile details", "#", class: "dropdown-item" %>
+            <button data-action="click->navbar#profileToggle" class="avatar-block">
+              <img src="https://kitt.lewagon.com/placeholder/users/ssaunier" alt="user-avatar" class="avatar">
+            </button>
+            <div class="dropdown-items" data-navbar-target="profile">
+              <%= link_to "My Profile", "#" %>
               <%= link_to "Log out", destroy_user_session_path, method: :delete %>
+              <%= link_to "My Profile", "#" %>
+              <%= link_to "My Profile", "#" %>
+              <%= link_to "My Profile", "#" %>
+              <%= link_to "My Profile", "#" %>
+
             </div>
           </li>
         <%# landing page menu %>

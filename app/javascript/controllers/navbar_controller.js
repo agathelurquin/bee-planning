@@ -10,25 +10,32 @@
 import { Controller } from "stimulus"
 
 export default class extends Controller {
-  static targets = ["button", "icon", "menu"]
+  static targets = ["button", "icon", "menu", "profile"]
 
   connect() {
     console.log('Hello, Stimulus!')
   }
 
   toggle() {
-    if(this.menuTarget.classList.contains("visible")) {
-      this.iconTarget.classList.add("fa-bars")
-      this.iconTarget.classList.remove("fa-times")
-      this.menuTarget.classList.remove("visible")
-      this.buttonTarget.setAttribute("aria-expanded", false)
-    } else {
+    if(!this.menuTarget.classList.contains("visible")) {
+      event.preventDefault()
       this.iconTarget.classList.remove("fa-bars")
       this.iconTarget.classList.add("fa-times")
       this.menuTarget.classList.add("visible")
       this.buttonTarget.setAttribute("aria-expanded", true)
+    } else {
+      this.iconTarget.classList.add("fa-bars")
+      this.iconTarget.classList.remove("fa-times")
+      this.menuTarget.classList.remove("visible")
+      this.buttonTarget.setAttribute("aria-expanded", false)
     }
   }
 
-
+  profileToggle() {
+    if(!this.profileTarget.classList.contains("dropdown-visible")){
+      this.profileTarget.classList.add("dropdown-visible")
+    } else {
+      this.profileTarget.classList.remove("dropdown-visible")
+    }
+   }
 }
