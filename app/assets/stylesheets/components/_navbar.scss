@@ -2,16 +2,17 @@
 .navbar {
   display: flex;
   width: 100vw;
-  background-color: pink;
+  height: 10vh;
+  background-color: transparent;
   border-bottom: 1px solid rgba(154, 154, 152, 0.6);
   justify-content: space-between;
+  align-items: center;
   position: sticky;
-  max-height: 70px;
-
 }
 
-.navbar-toggle a:hover {
- color: rgb(0, 0, 0);
+.tab a:hover {
+ color: rgb(196, 194, 194);
+ cursor: pointer;
 }
 
 // Logo
@@ -52,14 +53,12 @@
 }
 
 // Profile toggle
-// .dropdown {
-//   position: relative;
-// }
 
 .avatar-block {
   display: block;
   background: transparent;
   border: none;
+  cursor: pointer;
 }
 
 .avatar {
@@ -69,48 +68,47 @@
   height: 2.5rem;
 }
 
+.dropdown {
+  position: relative;
+}
+
 .dropdown-items {
-  display: none;
-  width: 100%;
-  flex-direction: column;
-  overflow: hidden;
-  max-height: 0;
-  padding: .5rem;
-  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .1);
-}
-
-.dropdown-items > li > a {
-  // height: 50px;
-  padding-left: 50%;
-  width: 100%;
-  align-items: center;
+  // display: none;
+  position: absolute;
+  // background: pink;
+  width: 150px;
+  height: auto;
   display: flex;
-
+  text-align: left;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  left: -70px;
+  border-radius: 5px;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(-10px);
+  transition: all 0.4s ease;
 }
 
-@keyframes dropdownAnimation {
-  0% {
-    box-shadow: 0px 3px 3px 1px rgba(0, 0, 0, 0);
-    display: flex;
-    // border-top: 3px solid rgb(172, 98, 164);
-  }
-
-  30% {
-    box-shadow: 0px 3px 3px 1px rgba(0, 0, 0, 0.3);
-    display: flex;
-    // border-top: 3px solid rgb(172, 98, 164);
-  }
-  100% {
-    max-height: 60em;
-    border-top: 3px solid rgb(172, 98, 164);
-    display: flex;
-    // box-shadow: 0px 3px 3px 1px rgba(0, 0, 0, 0.3);
-  }
-
+.dropdown li {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.5rem;
 }
 
-.dropdown:hover > .dropdown-items {
-  animation: dropdownAnimation 1s forwards;
+.dropdown li:hover {
+  background-color: rgb(121, 39, 74);
+}
+
+.dropdown button:focus + ul {
+  opacity: 1;
+  pointer-events: all;
+  transform: translateY(0px);
+
 }
 
 // Media queries
@@ -149,7 +147,7 @@
 
   .mobile-nav-toggle-icon {
     display: block;
-    position: absolute;
+    position: relative;
     background: transparent;
     color: rgb(246, 245, 242);
     font-size: 1.5rem;
