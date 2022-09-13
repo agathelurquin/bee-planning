@@ -17,50 +17,45 @@
       </i>
     </button>
     <div class="toggled-menu" >
-      <ul class="menu-items" data-navbar-target="menu">
-        <%# app menu %>
-        <% if user_signed_in? %>
-          <li class="nav-item active">
+      <%# app menu %>
+      <% if user_signed_in? %>
+        <ul class="menu-items" data-navbar-target="menu">
+          <li class="nav-item tab">
             <%= link_to "Home", "#", class: "nav-link" %>
           </li>
-          <li class="nav-item">
+          <li class="nav-item tab">
             <%= link_to "Studies", "#", class: "nav-link" %>
           </li>
-          <li class="nav-item">
+          <li class="nav-item tab">
             <%= link_to "Calendar", "#", class: "nav-link" %>
           </li>
-          <li class="nav-item">
+          <li class="nav-item tab">
             <%= link_to "Lifestyle", "#", class: "nav-link" %>
           </li>
-          <li class="nav-item">
+          <li class="nav-item tab">
             <%= link_to "Social", "#", class: "nav-link" %>
           </li>
-          <li class="nav-item">
+          <li class="nav-item tab">
             <%= link_to "Food", "#", class: "nav-link" %>
           </li>
 
           <%# profile avatar with dropdown to see profile details or logout %>
           <li class="profile nav-item dropdown">
-            <button data-action="click->navbar#profileToggle" class="avatar-block">
+            <button class="avatar-block">
               <img src="https://kitt.lewagon.com/placeholder/users/ssaunier" alt="user-avatar" class="avatar">
             </button>
-            <div class="dropdown-items" data-navbar-target="profile">
-              <%= link_to "My Profile", "#" %>
-              <%= link_to "Log out", destroy_user_session_path, method: :delete %>
-              <%= link_to "My Profile", "#" %>
-              <%= link_to "My Profile", "#" %>
-              <%= link_to "My Profile", "#" %>
-              <%= link_to "My Profile", "#" %>
-
-            </div>
+            <ul class="dropdown-items">
+              <li><%= link_to "My Profile", "#" %></li>
+              <li><%= link_to "Log out", destroy_user_session_path, method: :delete %></li>
+            </ul>
           </li>
-        <%# landing page menu %>
+        </ul>
+          <%# landing page menu %>
         <% else %>
-          <li class="nav-item">
-            <%= link_to "Login", new_user_session_path, class: "nav-link" %>
-          </li>
+            <li class="nav-item">
+              <%= link_to "Login", new_user_session_path, class: "nav-link" %>
+            </li>
         <% end %>
-      </ul>
     </div>
     <%# end burger icon %>
   </div>

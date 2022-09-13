@@ -10,7 +10,7 @@
 import { Controller } from "stimulus"
 
 export default class extends Controller {
-  static targets = ["button", "icon", "menu", "profile"]
+  static targets = ["button", "icon", "menu"]
 
   connect() {
     console.log('Hello, Stimulus!')
@@ -31,11 +31,11 @@ export default class extends Controller {
     }
   }
 
-  profileToggle() {
-    if(!this.profileTarget.classList.contains("dropdown-visible")){
-      this.profileTarget.classList.add("dropdown-visible")
-    } else {
-      this.profileTarget.classList.remove("dropdown-visible")
-    }
-   }
+  // profileToggle() {
+  //   if(!this.profileTarget.classList.contains("dropdown-visible")){
+  //     this.profileTarget.classList.add("dropdown-visible")
+  //   } else {
+  //     this.profileTarget.classList.remove("dropdown-visible")
+  //   }
+  //  }
 }
