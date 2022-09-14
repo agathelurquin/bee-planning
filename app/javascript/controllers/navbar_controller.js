@@ -12,21 +12,13 @@ import { Controller } from "stimulus"
 export default class extends Controller {
   static targets = ["button", "icon", "menu"]
 
-  connect() {
-    console.log('Hello, Stimulus!')
-  }
-
   toggle() {
+    this.menuTarget.classList.toggle("visible")
+    this.iconTarget.classList.toggle("fa-bars")
+    this.iconTarget.classList.toggle("fa-times")
     if(!this.menuTarget.classList.contains("visible")) {
-      event.preventDefault()
-      this.iconTarget.classList.remove("fa-bars")
-      this.iconTarget.classList.add("fa-times")
-      this.menuTarget.classList.add("visible")
       this.buttonTarget.setAttribute("aria-expanded", true)
     } else {
-      this.iconTarget.classList.add("fa-bars")
-      this.iconTarget.classList.remove("fa-times")
-      this.menuTarget.classList.remove("visible")
       this.buttonTarget.setAttribute("aria-expanded", false)
     }
   }
