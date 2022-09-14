@@ -23,6 +23,15 @@ export default class extends Controller {
     }
   }
 
+  resized () {
+    let resizeTimer;
+    document.body.classList.add("resize-animation-stopper")
+    clearTimeout(resizeTimer)
+    resizeTimer = setTimeout(() => {
+    document.body.classList.remove("resize-animation-stopper")
+    }, 400);
+  }
+
   // profileToggle() {
   //   if(!this.profileTarget.classList.contains("dropdown-visible")){
   //     this.profileTarget.classList.add("dropdown-visible")
