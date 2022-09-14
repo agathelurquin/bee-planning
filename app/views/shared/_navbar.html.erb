@@ -11,14 +11,14 @@
 
   <%# burger icon %>
   <div class="navbar-toggle" data-controller="navbar" data-action="resize@window->navbar#resized">
-    <button  data-navbar-target="button" data-action="click->navbar#toggle" class="mobile-nav-toggle-icon"  aria-controls="menu-items" aria-expanded="false">
-      <i class="fas fa-bars" data-navbar-target="icon">
-        <span class="sr-only">Menu</span>
-      </i>
-    </button>
-    <div class="toggled-menu" >
-      <%# app menu %>
-      <% if user_signed_in? %>
+    <% if user_signed_in? %>
+      <button  data-navbar-target="button" data-action="click->navbar#toggle" class="mobile-nav-toggle-icon"  aria-controls="menu-items" aria-expanded="false">
+        <i class="fas fa-bars" data-navbar-target="icon">
+          <span class="sr-only">Menu</span>
+        </i>
+      </button>
+      <div class="toggled-menu" >
+        <%# app menu %>
         <ul class="menu-items" data-navbar-target="menu">
           <li class="nav-item tab">
             <%= link_to "Home", "#", class: "nav-link" %>
@@ -50,13 +50,13 @@
             </ul>
           </li>
         </ul>
-          <%# landing page menu %>
-        <% else %>
-            <li class="nav-item">
-              <%= link_to "Login", new_user_session_path, class: "nav-link" %>
-            </li>
-        <% end %>
-    </div>
+      </div>
+    <%# landing page menu %>
+    <% else %>
+        <li class="nav-item">
+          <%= link_to "Login", new_user_session_path, class: "nav-link" %>
+        </li>
+    <% end %>
     <%# end burger icon %>
   </div>
 </div>
